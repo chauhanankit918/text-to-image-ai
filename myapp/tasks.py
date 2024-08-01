@@ -46,7 +46,7 @@ def generate_image(prompts):
             return "Connection error"
         else:
             if response.status_code == 200:
-                open_image = image_title+(".jpeg")
+                open_image = image_title + (".jpeg")
                 with open(open_image, 'wb') as file:
                     file.write(response.content)
                     image_file = file
