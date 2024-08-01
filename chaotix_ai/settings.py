@@ -136,7 +136,7 @@ AUTHENTICATION_BACKENDS = (
     'myapp.backend.EmailAuthentication',
 )
 
-STABILITY_KEY = 'sk-lCrTryhovJJNbb99dXlPClnDLlsSvpaB2PG1upWxv6iob0KF'
+STABILITY_KEY = 'sk-zY7MyAyJ5XxkzY6LfQ2eihS6QFVj1xvGBUq3gJiKOVC2eEXw'
 
 # Celery settings
 CELERY_BROKER_URL = 'redis://127.0.0.1:6379/0'
