@@ -16,9 +16,18 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path
 from django.conf.urls.static import static
+from rest_framework.routers import SimpleRouter
+from myapp.apis import TextImageViewSet
 
 from chaotix_ai import settings
 
+
+router = SimpleRouter()
+router.register(r'text-image',
+                TextImageViewSet,
+                basename='text_image')
+
+urlpatterns = router.urls
 
 urlpatterns = [
     path('admin/', admin.site.urls),
