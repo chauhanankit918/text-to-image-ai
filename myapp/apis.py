@@ -17,6 +17,6 @@ class TextImageViewSet(mixins.ListModelMixin,
         prompt = request.data.get('prompt', None)
         if not prompt:
             return Response({"message": "Please provide prompt"})
-        generate_image.delay(list(prompt))
+        generate_image.delay(list(prompt), request)
         return Response({"message": "Successfuly Generated"},
                         status=status.HTTP_201_CREATED)

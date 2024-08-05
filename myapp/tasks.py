@@ -23,7 +23,7 @@ def my_first_task(duration=1):
 
 
 @shared_task
-def generate_image(prompts):
+def generate_image(prompts, request):
     api_key = settings.STABILITY_KEY
 
     for prompt in prompts:
@@ -53,7 +53,9 @@ def generate_image(prompts):
                     with open(open_image, 'rb') as image_file:
                         image_file.seek(0)
                         if file:
+                            user = request.user
                             instance = TextImage.objects.create(
+                                user=user,
                                 title=image_title)
                             if instance:
                                 instance.image.save(
